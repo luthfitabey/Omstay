@@ -3,6 +3,8 @@ import 'package:omstay_indonesia/widgets/slide_dots.dart';
 import 'dart:async';
 import 'package:omstay_indonesia/widgets/slide_item.dart';
 import 'package:omstay_indonesia/models/slide_model.dart';
+import 'signup_screen.dart';
+import 'login_screen.dart';
 
 class GettingStarted extends StatefulWidget {
   @override
@@ -19,7 +21,7 @@ class _GettingStartedState extends State<GettingStarted> {
   void initState() {
     super.initState();
     Timer.periodic(Duration(seconds: 5), (Timer timer){
-      if(_currentPage < 2){
+      if(_currentPage < slideList.length){
         _currentPage++;
       }
       else _currentPage = 0;
@@ -95,7 +97,9 @@ class _GettingStartedState extends State<GettingStarted> {
                   padding: const EdgeInsets.all(15),
                   color: Theme.of(context).primaryColor,
                   textColor: Colors.white,
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                  },
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -109,9 +113,9 @@ class _GettingStartedState extends State<GettingStarted> {
                       'Login', 
                       style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
-                      // onPressed(){
-                      // //   Navigator.of(context).pushNamed(LoginScreen.routeName);
-                      // },
+                      onPressed: () {
+                          Navigator.of(context).pushNamed(LoginScreen.routeName);
+                      },
                     ),
                 ],),
               ],),

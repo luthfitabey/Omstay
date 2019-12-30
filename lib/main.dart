@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:omstay_indonesia/view/getting_started.dart';
+import 'package:omstay_indonesia/view/login_screen.dart';
+import 'package:omstay_indonesia/view/signup_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,10 +16,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: GettingStarted(),
-      // routes: {
-      //   LoginScreen.routeName: (ctx) => LoginScreen(),
-      //   SignupScreen.routeName: (ctx) => SignupScreen(),
-      // },
+      routes: {
+        LoginScreen.routeName: (ctx) => LoginScreen(),
+        SignUpScreen.routeName: (ctx) => SignUpScreen(),
+      },
     );
   }
 }
