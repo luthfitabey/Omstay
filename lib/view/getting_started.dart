@@ -90,7 +90,7 @@ class _GettingStartedState extends State<GettingStarted> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                 FlatButton(
-                  child: Text('Getting Started', style: TextStyle(fontSize: 18),),
+                  child: Text('Getting Started', style: TextStyle(fontFamily: "Poppins-Medium",fontSize: 18),),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -106,12 +106,12 @@ class _GettingStartedState extends State<GettingStarted> {
                   children: <Widget>[
                   Text(
                     'I have an account',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontFamily: "Poppins-Medium", fontSize: 18),
                   ),
                   FlatButton(
                     child: Text(
                       'Login', 
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(fontFamily: "Poppins-Medium", fontSize: 18, color: Colors.white),
                       ),
                       onPressed: () {
                           Navigator.of(context).pushNamed(LoginScreen.routeName);

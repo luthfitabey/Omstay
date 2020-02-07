@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FormCard extends StatelessWidget {
+class FormCardSignup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
       width: double.infinity,
-      height: ScreenUtil.getInstance().setHeight(500),
+      height: ScreenUtil.getInstance().setHeight(800),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
@@ -25,7 +25,7 @@ class FormCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Login",
+            Text("Sign Up",
                 style: TextStyle(
                     fontSize: ScreenUtil.getInstance().setSp(45),
                     fontFamily: "Poppins-Bold",
@@ -45,6 +45,18 @@ class FormCard extends StatelessWidget {
             SizedBox(
               height: ScreenUtil.getInstance().setHeight(30),
             ),
+            Text("Email",
+                style: TextStyle(
+                    fontFamily: "Poppins-Medium",
+                    fontSize: ScreenUtil.getInstance().setSp(26))),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: "lorem@gmail.com",
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+            ),
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(30),
+            ),
             Text("PassWord",
                 style: TextStyle(
                     fontFamily: "Poppins-Medium",
@@ -53,6 +65,19 @@ class FormCard extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                   hintText: "Password",
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+            ),
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(35),
+            ),
+             Text("Confirm Password",
+                style: TextStyle(
+                    fontFamily: "Poppins-Medium",
+                    fontSize: ScreenUtil.getInstance().setSp(26))),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  hintText: "Confirm",
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
             ),
             SizedBox(

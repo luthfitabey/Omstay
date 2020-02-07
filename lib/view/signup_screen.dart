@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:omstay_indonesia/icon/custom_icons.dart';
-import 'package:omstay_indonesia/widgets/form_card.dart';
+import 'package:omstay_indonesia/view/login_screen.dart';
+import 'package:omstay_indonesia/widgets/form_card_signup.dart';
 import 'package:omstay_indonesia/widgets/social_icon.dart';
 
 class SignUpScreen extends StatefulWidget {
-  static const routeName = '/login';
+  static const routeName = '/signup';
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
@@ -60,13 +61,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Image.asset("assets/Indonesia.png"),
+                padding: EdgeInsets.only(top: 5.0),
+                child: Image.asset("assets/images/Indonesia.png"),
               ),
               Expanded(
                 child: Container(),
               ),
-              Image.asset("assets/logoBaru.png")
+              // Image.asset("assets/images/logoBaru.png")
             ],
           ),
           SingleChildScrollView(
@@ -75,24 +76,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Column(
                 children: <Widget>[
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image.asset(
-                        "assets/images/Indonesia.png",
-                        width: ScreenUtil.getInstance().setWidth(110),
-                        height: ScreenUtil.getInstance().setHeight(110),
+                        "assets/images/logoBaru.png",
+                        width: ScreenUtil.getInstance().setWidth(300),
+                        height: ScreenUtil.getInstance().setHeight(300),
                       ),
-                      Text("LOGO",
-                          style: TextStyle(
-                              fontFamily: "Poppins-Bold",
-                              fontSize: ScreenUtil.getInstance().setSp(46),
-                              letterSpacing: .6,
-                              fontWeight: FontWeight.bold))
                     ],
                   ),
                   SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(20),
+                  ),
+                  // Text("OMSTAY INDONESIA",
+                  //         style: TextStyle(
+                  //             fontFamily: "Poppins-Bold",
+                  //             fontSize: ScreenUtil.getInstance().setSp(46),
+                  //             letterSpacing: .6,
+
+                  //             fontWeight: FontWeight.bold)),
+                  SizedBox(
                     height: ScreenUtil.getInstance().setHeight(180),
                   ),
-                  FormCard(),
+                  FormCardSignup(),
                   SizedBox(height: ScreenUtil.getInstance().setHeight(40)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,14 +140,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () {},
-                              child: Center(
-                                child: Text("SIGNIN",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: "Poppins-Bold",
-                                        fontSize: 18,
-                                        letterSpacing: 1.0)),
+                              child: FlatButton(
+                                child: Center(
+                                  child: Text("SIGNUP",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: "Poppins-Bold",
+                                          fontSize: 18,
+                                          letterSpacing: 1.0)),
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushNamed(LoginScreen.routeName);
+                                },
                               ),
                             ),
                           ),
@@ -209,12 +221,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "New User? ",
+                        "Already have account? ",
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
-                        onTap: () {},
-                        child: Text("SignUp",
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(LoginScreen.routeName);
+                        },
+                        child: Text("Login",
                             style: TextStyle(
                                 color: Color(0xFF5d74e3),
                                 fontFamily: "Poppins-Bold")),

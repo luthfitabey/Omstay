@@ -18,7 +18,7 @@ class SlideItem extends StatelessWidget {
           Text(
             slideList[index].title,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20,  fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyle(fontFamily: "Poppins-Medium", fontSize: 20,  fontWeight: FontWeight.bold, color: Colors.white),
           ),
           SizedBox(
             height: 30,
@@ -26,7 +26,7 @@ class SlideItem extends StatelessWidget {
           Text(
             slideList[index].description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, color: Colors.white),
+            style: TextStyle(fontFamily: "Poppins-Medium", fontSize: 16, color: Colors.white),
           ),
           SizedBox(
             height: 40,
